@@ -1,0 +1,104 @@
+
+/* hello world CSS */
+
+@font-face {
+font-family: 'symba';
+src: url('/fonts/symba.otf') format("opentype");
+}
+
+body {
+font-family: 'Playfair Display', serif;
+overflow: hidden;
+animation: fondo-animado 3s ease 1;
+animation-fill-mode: forwards;
+background: linear-gradient(141deg, #000 20%, #171717 51%, #000 75%);
+}
+
+.content {
+text-align: center;
+height: 98vh;
+overflow: hidden;
+}
+
+.content h1 {
+text-align: center;
+animation: entrada-h1 3s cubic-bezier(.08, .82, .17, 1) 1;
+font-size: 11vw;
+font-weight: normal;
+width: auto;
+color: #fff;
+margin: 42vh auto 0 auto;
+white-space: pre;
+animation-delay: 800ms;
+transform: translateX(-100vw);
+animation-fill-mode: forwards;
+}
+
+.content p {
+position: absolute;
+width: 100%;
+left: 0;
+font-size: 18em;
+margin: 22vh 0 0 0;
+z-index: -1;
+color: #1b314e;
+letter-spacing: -15px;
+animation: entrada-p 2s ease 1;
+animation-fill-mode: forwards;
+animation-delay: 2s;
+opacity: 0;
+overflow-y: hidden;
+}
+
+footer {
+position: fixed;
+bottom: 0;
+left: 0;
+color: #fff;
+text-align: right;
+width: 100%;
+padding: 17px;
+box-sizing: border-box;
+opacity: 0.3;
+}
+
+@keyframes entrada-p {
+0% {
+  opacity: 0.1;
+  max-height: 0;
+  transform: rotateX(90deg);
+}
+100% {
+  opacity: 0.5;
+  max-height: 500px;
+  transform: rotateX(0deg);
+}
+}
+
+@keyframes entrada-h1 {
+0% {
+  transform: translateX(-100vw);
+  letter-spacing: 5vw;
+  opacity: 0.1;
+}
+
+100% {
+  transform: translateX(0%);
+  letter-spacing: -2px;
+  opacity: 1;
+}
+}
+
+@keyframes fondo-animado {
+0% {
+  background-position-x: 0;
+  background-size: 300% auto;
+}
+100% {
+  background-position-x: -0px;
+  background-size: 100% auto;
+}
+}
+@media all and (max-width:768px){
+.content p{font-size: 7em;}
+}
